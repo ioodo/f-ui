@@ -1,0 +1,24 @@
+.f-picker .f-toolbar-inner {
+  padding: var(--f-picker-toolbar-inner__padding_top, 0) var(--f-picker-toolbar-inner__padding_right, 48rpx) var(--f-picker-toolbar-inner__padding_bottom, 0) var(--f-picker-toolbar-inner__padding_left, 48rpx);
+}
+.f-picker .f-toolbar-inner .left {
+  color: #969799;
+}
+.f-picker .f-toolbar-inner .center {
+  color: #323233;
+  font-size: 36rpx;
+}
+.f-picker .f-toolbar-inner .right {
+  color: #576b95;
+}
+/** picker view */
+.f-picker-view {
+  height: var(--f-picker-view__height, 450rpx);
+  background: var(--f-picker-view__background, #ffffff);
+}
+.f-picker-view-row {
+  line-height: 34px;
+}
+.f-picker-view-row__content {
+  text-align: center;
+}

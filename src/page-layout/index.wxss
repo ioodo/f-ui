@@ -1,0 +1,18 @@
+.page-layout {
+  height: 100%;
+}
+.f-navbar.trans {
+  background: transparent;
+}
+.page-layout .background-image {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+}
+.page-layout .page-content {
+  overflow: hidden;
+}
+.page-content > .page-content-ptf {
+  height: 100%;
+}

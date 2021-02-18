@@ -1,0 +1,15 @@
+<button
+  class="f-button {{ extClass }} type-{{type}} size-{{ size }} {{ fill ? 'f-button-fill' : ''}} {{ shape }}"
+  type="{{ type }}"
+  size="{{ size }}"
+  bindtap="onTap"
+  >
+  <view class="f-button-inner">
+    <f-icon
+      wx:if="{{ icon }}"
+      name="{{ icon }}"
+      extClass="f-button-icon"
+    ></f-icon>
+    <text class="f-button-text">{{ text }}</text>
+  </view>
+</button>

@@ -1,0 +1,44 @@
+:host {
+  --f-toolbar__height: 88rpx;
+  --f-toolbar__fontsize: 30rpx;
+}
+.f-toolbar {
+  position: relative;
+  width: 100%;
+  height: var(--f-toolbar__height);
+  margin: 0;
+  z-index: 500;
+  left: 0;
+  font-size: var(--f-toolbar__fontsize);
+  background: var(--f-toolbar__background, #ffffff);
+}
+.f-toolbar-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  padding: var(--f-toolbar-inner__padding_top, 0) var(--f-toolbar-inner__padding_right, 32rpx) var(--f-toolbar-inner__padding_bottom, 0) var(--f-toolbar-inner__padding_left, 32rpx);
+}
+.f-toolbar-inner .left, .f-toolbar-inner .right {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.f-toolbar-inner .left, .f-toolbar-inner .center .f-toolbar-inner .right {
+  position: relative;
+  height: var(--f-toolbar__height);
+}
+.f-toolbar-inner .left {
+  margin-right: 20rpx;
+}
+.f-toolbar-inner .right {
+  margin-left: 20rpx;
+}

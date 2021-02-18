@@ -1,0 +1,13 @@
+<view class="limit-textarea" >
+  <textarea
+    placeholder-class="placeholder"
+    placeholder="{{ placeholder }}"
+    value="{{ _value }}"
+    bindinput="onInput"
+    />
+  <view
+    class="limit" wx:if="limit > 0">
+    <text class="count">{{ _value.length }}</text>
+    <text class="total">/{{ limit }}</text>
+  </view>
+</view>

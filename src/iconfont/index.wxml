@@ -1,0 +1,5 @@
+<wxs src="../common/style.wxs" module="style" />
+<view
+  class="f-icon {{ style.class({ prefix, name, extClass }) }}"
+  style="{{ style.style({ color, size, unit }) }}">
+</view>

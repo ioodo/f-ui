@@ -1,0 +1,33 @@
+<view class="page-layout">
+  <f-navbar
+    extClass="{{ navbar.class || '' }} {{ backgroundImage != null ? 'trans' : '' }}"
+    title="{{ navbar.title || null }}"
+    subTitle="{{ navbar.subTitle || null }}"
+    back="{{ navbar.back }}"
+    bindback="onBack"
+    bindresize="onNavbarResize"
+    class="page-layout-navbar"
+  >
+      <view slot="back">
+        <slot name="back"></slot>
+      </view>
+      <view slot="right">
+        <slot name="right"></slot>
+      </view>
+      <view slot="extraContent">
+        <slot name="extraContent"></slot>
+      </view>
+  </f-navbar>
+  <image
+    wx:if="backgroundImage != null" 
+    src="{{ backgroundImage }}"
+    class="background-image"
+    mode="widthFix">
+  </image>
+  <view class="page-content" style="height: {{ contentHeight }}px;">
+    <ptf-view class="page-content-ptf" nomore="{{nomore}}" refreshing="{{refreshing}}" bindpulldownrefresh="refreshData" bindloadmore="loadMore"
+    disablePullDown="{{ disablePullDownRefresh }}" disablePullUp="{{ disablePullUpRefresh }}">
+      <slot name="pageContent"></slot>
+    </ptf-view>
+  </view>
+</view>

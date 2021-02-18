@@ -1,0 +1,9 @@
+<f-button
+  size="{{ size }}"
+  type="{{ type }}"
+  shape="{{ shape }}"
+  icon="{{ icon }}"
+  fill="{{ checked }}"
+  text="{{ text }}"
+  extClass="{{ extClass }}"
+  bindftap="onTap"></f-button>

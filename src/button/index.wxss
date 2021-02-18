@@ -1,0 +1,51 @@
+@import '../common/index.wxss';
+f-button {
+  display: inline-flex;
+}
+button.f-button {
+  /* display: initial; */
+  margin: 0px;
+  border-radius: 10rpx;
+  /* width: auto;
+  margin: 0px;
+  display: initial; */
+  /* padding: var(--f-button__padding, 14rpx 30rpx); */
+  position: relative;
+  display: inherit;
+  width: fit-content;
+}
+.f-button-inner {
+  display: inline-flex;
+  align-items: center;
+}
+.f-button-icon {
+  margin-right: 12rpx;
+  font-size: var(--f-button__fontsize, 32rpx);
+}
+.f-button-text {
+  font-size: var(--f-button__fontsize, 32rpx);
+}
+
+.f-button.size-mini .f-button-icon {
+  margin-right: 10rpx;
+  font-size: var(--f-button__fontsize, 28rpx);
+}
+.f-button.size-mini .f-button-text {
+  font-size: var(--f-button__fontsize, 28rpx);
+}
+
+/** sharp */
+.f-button.round {
+  border-radius: 64rpx;
+}
+/** styles */
+.f-button.type-pink {
+  color: #ec9a99;
+  border: 1px solid #fae5e5;
+  background: #ffffff;
+}
+.f-button-fill.type-pink {
+  color: #ffffff;
+  background: #ec9a99;
+  border: none;
+}

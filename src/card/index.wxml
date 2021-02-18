@@ -1,0 +1,14 @@
+<view class="f-card">
+  <view class="f-card-inner">
+    <slot class="f-card-content"></slot>
+    <!-- <view class="card-title">
+      <slot name="title"></slot>
+    </view>
+    <view class="card-content">
+      <slot name="content"></slot>
+    </view>
+    <view class="card-content">
+      <slot name="footer"></slot>
+    </view> -->
+  </view>
+</view>

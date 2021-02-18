@@ -1,0 +1,41 @@
+f-col {
+  display: contents;
+}
+.f-col {
+  position: relative;
+  min-height: 1px;
+}
+.f-col-1, .f-col-2, .f-col-3, .f-col-4, .f-col-5, .f-col-6 {
+  flex: 0 0 auto;
+  float: left;
+}
+.f-col-1 {
+  display: block;
+  box-sizing: border-box;
+  width: 16.666667%;
+}
+.f-col-2 {
+  display: block;
+  box-sizing: border-box;
+  width: 33.33333333%;
+}
+.f-col-3 {
+  display: block;
+  box-sizing: border-box;
+  width: 50%;
+}
+.f-col-4 {
+  display: block;
+  box-sizing: border-box;
+  width: 66.666667%;
+}
+.f-col-5 {
+  display: block;
+  box-sizing: border-box;
+  width: 83.333333%;
+}
+.f-col-6 {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}

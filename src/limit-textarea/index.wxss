@@ -1,0 +1,22 @@
+@import '../common/index.wxss';
+.limit-textarea {
+}
+.limit-textarea textarea{
+  color: var(--limit-textarea__color, #878787);
+  font-size: var(--limit-textarea__fontsize, 28rpx);
+  width: auto;
+}
+.limit-textarea .placeholder {
+  font-size: var(--limit-textarea__fontsize, 28rpx);
+  color: var(--limit-textarea__placeholder_color, #999999);
+}
+.limit-textarea .limit {
+  text-align: right;
+  font-size: var(--limit-textarea__fontsize, 28rpx);
+}
+.limit-textarea .limit > .count {
+  color: var(--limit-textarea__limit_count, #889fd2);
+}
+.limit-textarea .limit > .total {
+  color: var(--limit-textarea__limit_total, #999999);
+}

@@ -1,0 +1,6 @@
+<view
+  class="{{ baseCls }} {{ alignCls }} {{ justifyCls }}"
+  style="{{ style }}"
+>
+  <slot></slot>
+</view>

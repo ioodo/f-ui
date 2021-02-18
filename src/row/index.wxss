@@ -1,0 +1,46 @@
+.f-row {
+  position: relative;
+  height: auto;
+  margin-right: 0;
+  margin-left: 0;
+  zoom: 1;
+  display: block;
+  box-sizing: border-box;
+}
+.f-row-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+/** align */
+.f-row-flex-top {
+  align-items: flex-start;
+}
+.f-row-flex-middle {
+  align-items: center;
+}
+.f-row-flex-bottom {
+  align-items: flex-end;
+}
+/** justify */
+.f-row-flex-start {
+  justify-content: flex-start;
+}
+.f-row-flex-center {
+  justify-content: center;
+}
+.f-row-flex-end {
+  justify-content: flex-end;
+}
+.f-row-flex-space-between {
+  justify-content: space-between;
+}
+.f-row-flex-space-around {
+  justify-content: space-around;
+}
+.f-row:before, .f-row:after {
+  display: table;
+  content: "";
+}
+.f-row+.f-row:before, .f-row:after {
+  clear: both;
+}

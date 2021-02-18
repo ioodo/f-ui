@@ -1,0 +1,49 @@
+.f-navbar {
+  color: #000000;
+  background: #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  flex-shrink: 0;
+  z-index:99;
+}
+.f-navbar-wrapper .f-navbar-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.f-navbar-wrapper .navbar-left {
+  display: flex;
+  align-items: center;
+  left: 0;
+  position: absolute;
+}
+.f-navbar-wrapper .navbar-left-inner {
+  display: flex;
+  align-items: center;
+  color: #171717;
+}
+.f-icon.f-navbar-left__arrow {
+  margin: 0px 4px;
+}
+.f-navbar-title-wrapper {
+  padding: 0 6px;
+}
+.f-navbar-title-wrapper .f-navbar-title-inner {
+  font-size: 16px;
+}
+.f-navbar-title-wrapper .f-navbar-subtitle-inner {
+  font-size: 10px;
+  /* line-height: 20px; */
+  color: #9b9b9b;
+  padding: 4px 0px;
+}
+.f-navbar-wrapper .navbar-right {
+  right: 0;
+  position: absolute;
+}
+/** extra */
+.f-navbar-extra {
+}

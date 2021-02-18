@@ -1,0 +1,44 @@
+var obj = require('./object.wxs');
+
+// https://github.com/youzan/vant-weapp
+function styleText (styles) {
+  return obj.keys(styles)
+    .filter(function (key) {
+      return styles[key] != null && styles[key] !== '';
+    })
+    .map(function (key) {
+      return [key, [styles[key]]].join(':');
+    })
+    .join(';');
+}
+function className(data, cls) {
+  return data.prefix ? data.prefix + '-' + cls : cls
+}
+function viewClass (data) {
+  var result = [];
+  obj.keys(data)
+    .forEach(function (key) {
+      if (key === 'name') {
+        result.push(className(data, data[key]));
+      } else if (key === 'extClass') {
+        result.push(data[key])
+      }
+    })
+  return result.join(" ");
+}
+
+function viewStyle (data) {
+  var result = {};
+  if (data.color) {
+    result.color = data.color;
+  }
+  if (data.size) {
+    result['font-size'] = data.size + data.unit;
+  }
+  return styleText(result);
+}
+
+module.exports = {
+  class: viewClass,
+  style: viewStyle
+}

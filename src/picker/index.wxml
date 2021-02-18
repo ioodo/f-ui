@@ -1,0 +1,30 @@
+<view
+  class="f-picker"
+>
+  <f-toolbar wx:if="{{ toolbar }}">
+    <view slot="left">取消</view>
+    <view slot="center">标题</view>
+    <view slot="right">确认</view>
+  </f-toolbar>
+  <slot wx:else name="toolbar"></slot>
+  <!-- <slot name="content"></slot> -->
+  <picker-view
+    class="f-picker-view"
+    value="{{ value }}"
+    bindchange="handleChange">
+    <picker-view-column
+      wx:for="{{ columns }}"
+      wx:key="*this">
+      <f-row
+        wx:for="{{ item }}"
+        wx:for-item="col"
+        wx:key="*this"
+        class="f-picker-view-row"
+      >
+        <f-col justify="center">
+          <view class="f-picker-view-row__content">{{ col }}</view>
+        </f-col>
+      </f-row>
+    </picker-view-column>
+  </picker-view>
+</view>

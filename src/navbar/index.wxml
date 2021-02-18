@@ -1,0 +1,48 @@
+<view style="height: {{statusBar.height + navbar.displayHeight }}px;"></view>
+<view class="f-navbar {{ extClass || '' }}">
+  <view class="status-bar" style="height: {{ statusBar.height }}px;">
+  {{ displayHeight }}
+  </view>
+  <view class="f-navbar-wrapper" style="height: {{ navbar.displayHeight }}px;">
+    <view class="f-navbar-inner">
+      <view class="navbar-left" style="margin-left: {{ navbar.left }}px;">
+        <view wx:if="{{ back !== 'false' }}" class="navbar-left-inner">
+          <f-icon
+            name="left"
+            size="28"
+            extClass="f-navbar-left__arrow"
+            bindtap="handleBack"
+          ></f-icon>
+          <view class="f-navbar-title-wrapper">
+            <view class="f-navbar-title-inner">
+              <text
+              >{{ title }}</text>
+            </view>
+            <view
+              wx:if="{{ subTitle.length > 0 }}"
+              class="f-navbar-subtitle-inner">
+              <text
+              >{{ subTitle }}</text>
+            </view>
+          </view>
+          <!-- <f-icon name="left" size="16" color="#1989fa"></f-icon> -->
+          <!-- 
+          https://www.jianshu.com/p/e95467fc5c02
+          https://github.com/youzan/vant-icons/tree/master/src
+          https://github.com/youzan/vant-weapp -->
+        </view>
+        <slot name="back" wx:else></slot>
+      </view>
+      <view
+        class="navbar-right"
+        style="margin-right: {{ navbar.right }}px;">
+        <view class="navbar-right-inner">
+          <slot name="right"></slot>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="f-navbar-extra">
+  <slot name="extraContent"></slot>
+</view>

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "f-toolbar": "../toolbar/index",
+    "f-row": "../row/index",
+    "f-col": "../col/index"
+  }
+}

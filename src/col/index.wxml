@@ -1,0 +1,6 @@
+<view
+  class="f-col f-col-{{ span }}"
+  style="{{ style }}"
+>
+  <slot></slot>
+</view>
