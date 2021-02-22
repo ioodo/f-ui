@@ -1,0 +1,11 @@
+<f-card class="post-card" padding="{{ false }}">
+  <view class="card-header">
+    <slot name="header"></slot>
+  </view>
+  <view class="card-content">
+    <slot name="content"></slot>
+  </view>
+  <view class="card-footer {{ footer-border ? '' : 'border-none'}}" wx:if="{{ footer }}">
+    <slot name="footer"></slot>
+  </view>
+</f-card>

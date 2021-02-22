@@ -1,5 +1,5 @@
 <button
-  class="f-button {{ extClass }} type-{{type}} size-{{ size }} {{ fill ? 'f-button-fill' : ''}} {{ shape }}"
+  class="f-button {{ extClass }} type-{{type}} size-{{ size }} {{ fill ? 'f-button-fill' : ''}} {{ shape }} {{ block ? 'f-button-block' : ''}}"
   type="{{ type }}"
   size="{{ size }}"
   bindtap="onTap"

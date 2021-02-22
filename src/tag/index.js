@@ -40,6 +40,10 @@ Component({
     },
     extClass: {
       type: String
+    },
+    block: {
+      type: Boolean,
+      value: false
     }
   },
   data : {

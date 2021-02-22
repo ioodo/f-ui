@@ -32,7 +32,7 @@
   padding: 0 6px;
 }
 .f-navbar-title-wrapper .f-navbar-title-inner {
-  font-size: 16px;
+  font-size: var(--f-navbar-title-text__fontsize, 32rpx);
 }
 .f-navbar-title-wrapper .f-navbar-subtitle-inner {
   font-size: 10px;

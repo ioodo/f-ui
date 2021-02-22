@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "f-card": "mp-fui/card/index"
+  }
+}

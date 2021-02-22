@@ -1,6 +1,6 @@
 <view class="page-layout">
   <f-navbar
-    extClass="{{ navbar.class || '' }} {{ backgroundImage != null ? 'trans' : '' }}"
+    extClass="{{ navbar.class || '' }} {{ backgroundImage ? 'trans' : '' }}"
     title="{{ navbar.title || null }}"
     subTitle="{{ navbar.subTitle || null }}"
     back="{{ navbar.back }}"
@@ -30,4 +30,15 @@
       <slot name="pageContent"></slot>
     </ptf-view>
   </view>
+  <f-toolbar class="f-toolbar-comp" wx:if="{{ toolbar }}">
+    <view slot="left">
+      <slot name="toolbar-left"></slot>
+    </view>
+    <view slot="center">
+      <slot name="toolbar-center"></slot>
+    </view>
+    <view slot="right">
+      <slot name="toolbar-right"></slot>
+    </view>
+  </f-toolbar>
 </view>

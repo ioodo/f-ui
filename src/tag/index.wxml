@@ -6,4 +6,5 @@
   fill="{{ checked }}"
   text="{{ text }}"
   extClass="{{ extClass }}"
+  block="{{ block }}"
   bindftap="onTap"></f-button>

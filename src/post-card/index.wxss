@@ -1,0 +1,39 @@
+.post-card {
+}
+.post-card .card-content {
+  padding: 30rpx 36rpx;
+}
+.post-card .card-header .title {
+  color: var(--post-card-footer_color, #333333);
+  font-size: var(--post-card-footer_fontsize, 32rpx);
+  font-weight: 600;
+}
+.post-card .card-header, .post-card .card-footer {
+  padding: 30rpx 36rpx;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post-card .card-footer {
+  /* margin-top: var(--post-card-footer_padding_top, 26rpx); */
+  color: var(--post-card-footer_color, rgba(0, 0, 0, 0.45));
+  font-size: var(--post-card-footer_fontsize, 28rpx);
+}
+.post-card .card-footer:before {
+  content: '';
+  position: absolute;
+  background-color: var(--post-card-footer_border_color, #f1f1f1);
+  display: block;
+  z-index: 15;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  height: 1rpx;
+  width: 100%;
+}
+.post-card .card-footer.border-none:before {
+  display: none;
+}

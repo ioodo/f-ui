@@ -36,7 +36,7 @@ button.f-button {
 
 /** sharp */
 .f-button.round {
-  border-radius: 64rpx;
+  border-radius: 64rpx !important;
 }
 /** styles */
 .f-button.type-pink {
@@ -48,4 +48,9 @@ button.f-button {
   color: #ffffff;
   background: #ec9a99;
   border: none;
+}
+.f-button.f-button-block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

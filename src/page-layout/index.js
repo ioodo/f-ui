@@ -23,6 +23,10 @@ Component({
     disablePullUpRefresh: {
       type: Boolean,
       value: false
+    },
+    toolbar: {
+      type: Boolean,
+      value: false
     }
   },
   data : {
@@ -45,13 +49,15 @@ Component({
       this.triggerEvent('back');
     },
     onNavbarResize ({ detail }) {
-      const gd = getApp().globalData[strings.globalDataName]
+      // const gd = getApp().globalData[strings.globalDataName]
+      const sysInfo = wx.getSystemInfoSync()
 
       var query = this.createSelectorQuery();
       query.select('.page-layout-navbar').boundingClientRect()
+      query.select('.f-toolbar-comp').boundingClientRect()
       query.exec((res) => {
         this.setData({
-          contentHeight: gd.windowHeight - res[0].height
+          contentHeight: sysInfo.windowHeight - res[0].height - (res[1] != null ? res[1].height : 0)
         })
       });
     },

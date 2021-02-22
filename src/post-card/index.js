@@ -7,7 +7,11 @@ Component({
     styleIsolation: 'shared'
   },
   properties: {
-    padding: {
+    footer: {
+      type: Boolean,
+      value: true
+    },
+    'footer-border': {
       type: Boolean,
       value: true
     }
