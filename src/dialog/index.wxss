@@ -1,0 +1,49 @@
+:host {
+  --f-dialog-title_fontsize: 32rpx;
+  --f-dialog-title_color: #000000;
+  --f-dialog-content_fontsize: 32rpx;
+  --f-dialog-content_color: rgba(0, 0, 0, .65);
+  --f-dialog-button-cancel_color: rgba(0,0,0,.65);
+  --f-dialog-button-cancel_border : 1px solid #d9d9d9;
+  --f-dialog-button-cancel_background: #ffffff;
+  --f-dialog-button-ok_color: #ffffff;
+  --f-dialog-button-ok_border : none;
+  --f-dialog-button-ok_background: #1890ff;
+}
+
+.f-dialog .f-popup-content{
+  background: transparent;
+  width: 90%;
+}
+.f-dialog .f-popup-content .f-card {
+  margin: 0rpx;
+  padding: 50rpx 70rpx;
+}
+.f-dialog-inner .f-dialog-title {
+  text-align: center;
+  font-size: var(--f-dialog-title_fontsize);
+  color: var(--f-dialog-title_fontsize);
+  font-weight: 500;
+}
+.f-dialog-inner .f-dialog-content {
+  text-align: center;
+  font-size: var(--f-dialog-content_fontsize);
+  color: var(--f-dialog-content_color);
+  margin-top: 35rpx;
+}
+.f-dialog-buttons {
+  margin-top: 60rpx;
+}
+.f-dialog-buttons f-button {
+  width: 100%;
+}
+.f-dialog .f-button.type-button-cancel {
+  color: var(--f-dialog-button-cancel_color);
+  border: var(--f-dialog-button-cancel_border);
+  background: var(--f-dialog-button-cancel_background);
+}
+.f-dialog .f-button.type-button-ok {
+  color: var(--f-dialog-button-ok_color);
+  border: var(--f-dialog-button-ok_border);
+  background: var(--f-dialog-button-ok_background);
+}

@@ -1,0 +1,38 @@
+<f-popup
+  visible="{{ show }}"
+  class="f-dialog">
+  <f-card >
+    <view class="f-dialog-inner">
+      <view class="f-dialog-title">
+        <text wx:if="{{ title && title !== 'false' }}">{{ title }}</text>
+        <slot wx:else name="title"></slot>
+      </view>
+      <view class="f-dialog-content">
+        <text wx:if="{{ content && content !== 'false' }}">{{ content }}</text>
+        <slot wx:else name="content"></slot>
+      </view>
+    </view>
+    <view class="f-dialog-buttons">
+      <f-row gutter="{{ buttonGutter }}">
+        <f-col span="{{ buttonSpan }}" gutter="{{ buttonGutter }}">
+          <f-button
+            wx:if="{{ showCancelButton }}"
+            text="{{ cancelButtonText }}"
+            block="{{ true }}"
+            type="button-cancel"
+            catchtap="onCancel"
+          ></f-button>
+        </f-col>
+        <f-col span="{{ buttonSpan }}" gutter="{{ buttonGutter }}">
+          <f-button
+            wx:if="{{ showOkButton }}"
+            text="{{ okButtonText }}"
+            block="{{ true }}"
+            type="button-ok"
+            catchtap="onOk"
+          ></f-button>
+        </f-col>
+      </f-row>
+    </view>
+  </f-card>
+</f-popup>
