@@ -4,6 +4,7 @@
     placeholder="{{ placeholder }}"
     value="{{ _value }}"
     bindinput="onInput"
+    maxlength="{{ limit }}"
     />
   <view
     class="limit" wx:if="limit > 0">

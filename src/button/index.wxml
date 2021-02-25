@@ -3,6 +3,13 @@
   type="{{ type }}"
   size="{{ size }}"
   bindtap="onTap"
+  openType="{{ openType }}"
+  bindgetuserinfo="bindGetUserInfo"
+  bindcontact="bindContact"
+  bindgetphonenumber="bindGetPhoneNumber"
+  binderror="bindError"
+  bindlaunchapp="bindLaunchApp"
+  bindopensetting="bindOpenSetting"
   >
   <view class="f-button-inner">
     <f-icon
