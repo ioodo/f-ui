@@ -85,9 +85,9 @@ Component({
       var result = []
       var { value, columns } = this.data
       var i = 0
-      value.forEach((v) => {
-        result.push(columns[i][v])
-        i++;
+      columns.forEach(col => {
+        result.push(col[value[i] != null ? value[i] : 0 ])
+        i++;        
       })
       return result;
     }

@@ -53,6 +53,14 @@ Component({
       type: Boolean,
       value: false,
     },
+    scrollWithAnimation: {
+      type: Boolean,
+      value: true
+    },
+    scrollTop: {
+      type: Number,
+      value: 0
+    }
   },
   data: {
     pullDownStatus: 0,
@@ -153,5 +161,10 @@ Component({
         }
       }
     },
+    scrollTop () {
+      this.setData({
+        scrollTop: 0
+      })
+    }
   },
 })

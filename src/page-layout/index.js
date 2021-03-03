@@ -32,12 +32,14 @@ Component({
   data : {
     contentHeight: 0,
     refreshing: false,
-    nomore: false
+    nomore: false,
+    keyboardHeight: 0
   },
   observers : {
   },
   lifetimes: {
     ready: function () {
+      this.resize()
     }
   },
   created () {
@@ -49,6 +51,9 @@ Component({
       this.triggerEvent('back');
     },
     onNavbarResize ({ detail }) {
+      this.resize()
+    },
+    resize () {
       // const gd = getApp().globalData[strings.globalDataName]
       const sysInfo = wx.getSystemInfoSync()
 
@@ -57,7 +62,7 @@ Component({
       query.select('.f-toolbar-comp').boundingClientRect()
       query.exec((res) => {
         this.setData({
-          contentHeight: sysInfo.windowHeight - res[0].height - (res[1] != null ? res[1].height : 0)
+          contentHeight: sysInfo.windowHeight - res[0].height - (res[1] != null ? res[1].height : 0) - this.data.keyboardHeight
         })
       });
     },
@@ -90,10 +95,31 @@ Component({
       // }, 2000);
     },
     stopRefresh (hasMore) {
-      this.setData({
-        nomore: !hasMore,
+      const params = {
         refreshing: false
+      }
+      if (hasMore != null)
+        params.nomore = !hasMore
+      this.setData(params)
+    },
+    scrollTop () {
+      var ptf = this.selectComponent(".page-content-ptf");
+      ptf.scrollTop()
+    },
+    registKeyboardEvent (callback) {
+      wx.onKeyboardHeightChange(res => {
+        if (callback) {
+          callback(res)
+        }
+        this.data.keyboardHeight = res.height
+        wx.nextTick(() => {
+          this.resize()
+        })
       })
+    },
+    unregistKeyboardEvent () {
+      this.data.keyboardHeight = 0
+      wx.offKeyboardHeightChange()
     }
   }
 })
