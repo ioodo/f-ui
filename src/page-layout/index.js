@@ -106,6 +106,10 @@ Component({
       var ptf = this.selectComponent(".page-content-ptf");
       ptf.scrollTop()
     },
+    scrollTo (position) {
+      var ptf = this.selectComponent(".page-content-ptf");
+      ptf.scrollTo(position)
+    },
     registKeyboardEvent (callback) {
       wx.onKeyboardHeightChange(res => {
         if (callback) {

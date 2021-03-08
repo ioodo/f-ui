@@ -29,6 +29,9 @@
             block="{{ true }}"
             type="button-ok"
             catchtap="onOk"
+            openType="{{ okButtonOpenType }}"
+            bindgetuserinfo="bindGetUserInfo"
+            bindgetphonenumber="bindGetPhoneNumber"
           ></f-button>
         </f-col>
       </f-row>

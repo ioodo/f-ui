@@ -165,6 +165,11 @@ Component({
       this.setData({
         scrollTop: 0
       })
+    },
+    scrollTo (position) {
+      this.setData({
+        scrollTop: position
+      })
     }
   },
 })

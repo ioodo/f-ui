@@ -1,7 +1,7 @@
 /**
  * https://github.com/youzan/vant-weapp/blob/dev/lib/dialog/index.js
  */
-Component({
+ Component({
   options :{
     addGlobalClass: true,
     multipleSlots: true,
@@ -27,6 +27,10 @@ Component({
     okButtonText: {
       type: String,
       value: '确定'
+    },
+    okButtonOpenType: {
+      type: String,
+      value: ''
     },
     buttonGutter: {
       type: Array,
@@ -73,6 +77,12 @@ Component({
     },
     onOk () {
       this.handleAction('ok')
+    },
+    bindGetUserInfo: function (event) {
+      this.triggerEvent('getuserinfo', event.detail)
+    },
+    bindGetPhoneNumber: function (event) {
+      this.triggerEvent('getphonenumber', event.detail)
     },
     handleAction (action) {
       this.setData({
