@@ -1,6 +1,6 @@
 <view class="page-layout">
   <f-navbar
-    extClass="{{ navbar.class || '' }} {{ backgroundImage != null ? 'trans' : '' }}"
+    extClass="{{ navbar.class || '' }} {{ backgroundImage ? 'trans' : '' }}"
     title="{{ navbar.title || null }}"
     subTitle="{{ navbar.subTitle || null }}"
     back="{{ navbar.back }}"
@@ -26,8 +26,22 @@
   </image>
   <view class="page-content" style="height: {{ contentHeight }}px;">
     <ptf-view class="page-content-ptf" nomore="{{nomore}}" refreshing="{{refreshing}}" bindpulldownrefresh="refreshData" bindloadmore="loadMore"
-    disablePullDown="{{ disablePullDownRefresh }}" disablePullUp="{{ disablePullUpRefresh }}">
+    disablePullDown="{{ disablePullDownRefresh }}" disablePullUp="{{ disablePullUpRefresh }}" wx:if="{{ scrollable }}">
       <slot name="pageContent"></slot>
     </ptf-view>
+    <block wx:else>
+      <slot name="pageContent"></slot>
+    </block>
   </view>
+  <f-toolbar class="f-toolbar-comp" wx:if="{{ toolbar }}">
+    <view slot="left">
+      <slot name="toolbar-left"></slot>
+    </view>
+    <view slot="center">
+      <slot name="toolbar-center"></slot>
+    </view>
+    <view slot="right">
+      <slot name="toolbar-right"></slot>
+    </view>
+  </f-toolbar>
 </view>

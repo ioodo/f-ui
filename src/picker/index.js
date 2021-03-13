@@ -27,6 +27,18 @@ Component({
     value: {
       type: Array,
       value: []
+    },
+    cancelText: {
+      type: String,
+      value: '取消'
+    },
+    okText: {
+      type: String,
+      value: '确认'
+    },
+    title: {
+      type: String,
+      value: ''
     }
   },
   data : {
@@ -44,13 +56,40 @@ Component({
   attached () {
   },
   methods: {
+    onCancel () {
+      this.handleAction('cancel')
+    },
+    onOk () {
+      this.handleAction('ok')
+    },
+    handleAction(action) {
+      wx.nextTick(() => {
+        this.triggerEvent(action, {
+          position: this.data.value,
+          value: this.getValue()
+        })
+      })
+    },
     handleChange (e) {
       this.setData({
         value: e.detail.value
       })
-      this.triggerEvent('change', {
-        ...(e.detail)
+      wx.nextTick(() => {
+        this.triggerEvent('change', {
+          position: e.detail.value,
+          value: this.getValue()
+        })
       })
+    },
+    getValue () {
+      var result = []
+      var { value, columns } = this.data
+      var i = 0
+      columns.forEach(col => {
+        result.push(col[value[i] != null ? value[i] : 0 ])
+        i++;        
+      })
+      return result;
     }
   }
 })

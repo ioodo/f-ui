@@ -16,3 +16,8 @@
 .page-content > .page-content-ptf {
   height: 100%;
 }
+.f-toolbar-comp {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

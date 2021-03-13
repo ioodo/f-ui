@@ -1,0 +1,3 @@
+<view class="f-list">
+  <slot></slot>
+</view>

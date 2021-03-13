@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "f-popup": "../popup/index",
+    "f-card": "../card/index",
+    "f-button": "../button/index",
+    "f-row": "../row/index",
+    "f-col": "../col/index"
+  }
+}

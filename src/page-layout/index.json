@@ -3,6 +3,7 @@
   "usingComponents": {
     "f-icon": "../iconfont/index",
     "f-navbar": "../navbar/index",
+    "f-toolbar": "../toolbar/index",
     "ptf-view": "../wx-pulltorefresh-view/wx-pulltorefresh-view"
   }
 }

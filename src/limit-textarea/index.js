@@ -37,6 +37,11 @@ Component({
   methods: {
     onInput (e) {
       this.setValue(e.detail.value);
+      wx.nextTick(() => {
+        this.triggerEvent('input', {
+          value: this.data._value
+        })
+      })
     },
     setValue (v) {
       const { limit } = this.data;
@@ -47,6 +52,9 @@ Component({
       this.setData({
         _value: data
       });
+    },
+    getValue () {
+      return this.data._value
     }
   }
 })

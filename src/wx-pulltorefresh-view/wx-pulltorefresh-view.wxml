@@ -3,40 +3,46 @@
     <movable-view id="pulltorefresh-view-container" out-of-bounds="{{true}}" y="{{-offsetY}}" direction="vertical" bindtouchend="touchend" bindchange="change">
       <view class="header">
         <view class="header-text" wx:if="{{pullDownStatus === 0 && !disablePullDown}}">
-          <icon class="iconfont icon-pull-down" space="nbsp"/>{{pullText}}
+          <icon class="iconfont icon-pull-down" space="nbsp"/>
+          <text>{{pullText}}</text>
         </view>
         <view class="header-text" wx:if="{{pullDownStatus === 1 && !disablePullDown}}">
-          <icon class="iconfont icon-release-up" space="nbsp"/>{{releaseText}}
+          <icon class="iconfont icon-release-up" space="nbsp"/>
+          <text>{{releaseText}}</text>
         </view>
         <view class="header-text" wx:if="{{pullDownStatus === 2 && !disablePullDown}}">
-          <icon class="iconfont icon-loading loading" space="nbsp"/>{{loadingText}}...
+          <icon class="iconfont icon-loading loading" space="nbsp"/>
+          <text>{{loadingText}}...</text>
         </view>
         <view class="header-text" wx:if="{{pullDownStatus === 3 && !disablePullDown}}">
-          <icon class="iconfont icon-complete" space="nbsp"/>{{finishText}}
+          <icon class="iconfont icon-complete" space="nbsp"/>
+          <text>{{finishText}}</text>
         </view>
       </view>
-      <scroll-view class="body" scroll-y>
+      <scroll-view class="body" scroll-y scroll-with-animation="{{scrollWithAnimation}}" scroll-top="{{ scrollTop }}" bindscrolltolower="scrollToLower">
         <slot></slot>
+        <view class="loadmore" wx:if="{{!nomore}}">
+            <!-- <view class="header-text" wx:if="{{pullUpStatus === 0 && !disablePullUp}}">
+              <icon class="iconfont icon-release-up" space="nbsp"/>{{pullUpText}}
+            </view> -->
+            <!-- <view class="header-text" wx:if="{{pullUpStatus === 1 && !disablePullUp}}">
+              <icon class="iconfont icon-pull-down" space="nbsp"/>{{pullUpReleaseText}}
+            </view> -->
+            <!-- <view class="header-text" wx:if="{{pullUpStatus === 2 && !disablePullUp}}">
+              <icon class="iconfont icon-loading loading" space="nbsp"/>{{loadmoreText}}...
+            </view> -->
+            <!-- <view class="header-text" wx:if="{{pullUpStatus === 3 && !disablePullUp}}">
+              <icon class="iconfont icon-complete" space="nbsp"/>{{loadmoreFinishText}}
+            </view> -->
+            <view class="header-text" wx:if="{{pullUpStatus === 2 && !disablePullUp}}">
+              <icon class="iconfont icon-loading loading" space="nbsp"/>
+              <text>{{loadmoreText}}...</text>
+            </view>
+          <!-- <view class="header-text" wx:if="{{nomore}}">
+            <icon class="iconfont icon-complete" space="nbsp"/>{{nomoreText}}
+          </view> -->
+        </view>
       </scroll-view>
-      <view class="loadmore">
-        <view wx:if="{{!nomore}}">
-          <view class="header-text" wx:if="{{pullUpStatus === 0 && !disablePullUp}}">
-            <icon class="iconfont icon-release-up" space="nbsp"/>{{pullUpText}}
-          </view>
-          <view class="header-text" wx:if="{{pullUpStatus === 1 && !disablePullUp}}">
-            <icon class="iconfont icon-pull-down" space="nbsp"/>{{pullUpReleaseText}}
-          </view>
-          <view class="header-text" wx:if="{{pullUpStatus === 2 && !disablePullUp}}">
-            <icon class="iconfont icon-loading loading" space="nbsp"/>{{loadmoreText}}...
-          </view>
-          <view class="header-text" wx:if="{{pullUpStatus === 3 && !disablePullUp}}">
-            <icon class="iconfont icon-complete" space="nbsp"/>{{loadmoreFinishText}}
-          </view>
-        </view>
-        <view class="header-text" wx:if="{{nomore}}">
-          <icon class="iconfont icon-complete" space="nbsp"/>{{nomoreText}}
-        </view>
-      </view>
     </movable-view>
   </movable-area>
 </view>

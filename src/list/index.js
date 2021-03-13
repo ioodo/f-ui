@@ -3,11 +3,13 @@
 Component({
   options :{
     addGlobalClass: true,
-    multipleSlots: true,
     styleIsolation: 'shared'
   },
   properties: {
-    padding: {
+    story: {
+      type: Object
+    },
+    footer: {
       type: Boolean,
       value: true
     }
