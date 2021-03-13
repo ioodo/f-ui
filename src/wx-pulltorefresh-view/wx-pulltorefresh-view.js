@@ -1,4 +1,8 @@
 Component({
+  options :{
+    addGlobalClass: true,
+    styleIsolation: 'shared'
+  },
   properties: {
     pullText: {
       type: String,
@@ -26,7 +30,7 @@ Component({
     },
     loadmoreText: {
       type: String,
-      value: '正在加载更多数据',
+      value: '正在加载',
     },
     loadmoreFinishText: {
       type: String,
@@ -98,6 +102,7 @@ Component({
         })
         this.triggerEvent('pulldownrefresh');
       } else if (this.data.isOutBound && this.data.offsetY < 40 && !this.properties.disablePullUp) {
+        /*
         if (this.properties.nomore) {
           this.scrollToBottom()
         } else {
@@ -107,6 +112,7 @@ Component({
           })
           this.triggerEvent('loadmore');
         }
+        */
       } else {
         this.setData({
           offsetY: 40,
@@ -157,7 +163,10 @@ Component({
             })
           }, 500);
         } else if (this.data.eventName = 'loadmore') {
-          this.scrollToBottom()
+          this.setData({
+            pullUpStatus: 3
+          })
+          // this.scrollToBottom()
         }
       }
     },
@@ -170,6 +179,16 @@ Component({
       this.setData({
         scrollTop: position
       })
+    },
+    scrollToLower (e) {
+      if (this.properties.disablePullUp || this.properties.nomore || this.data.pullUpStatus === 2) {
+        return
+      }
+      this.setData({
+        pullUpStatus: 2,
+        eventName: 'loadmore'
+      })
+      this.triggerEvent('loadmore');
     }
   },
 })

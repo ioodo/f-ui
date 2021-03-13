@@ -13,7 +13,8 @@ movable-area {
 }
 
 movable-view {
-  height: calc(100% + 80px);
+  /* height: calc(100% + 80px); */
+  height: calc(100% + 40px);
   width: 100%;
 }
 
@@ -27,9 +28,14 @@ movable-view {
   line-height: 40px;
   text-align: center;
 }
-
+.pulltorefresh-view .header-text text {
+  color: #333333;
+  font-size: 28rpx;
+  margin-left: 16rpx;
+}
 .pulltorefresh-view .body {
-  height: calc(100% - 80px);
+  /* height: calc(100% - 80px); */
+  height: calc(100% - 40px);
 }
 
 .pulltorefresh-view .loadmore {
