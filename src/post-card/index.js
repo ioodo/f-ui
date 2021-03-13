@@ -11,7 +11,7 @@ Component({
       type: Boolean,
       value: true
     },
-    'footer-border': {
+    footerBorder: {
       type: Boolean,
       value: true
     }

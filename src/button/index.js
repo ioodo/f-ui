@@ -39,6 +39,10 @@ Component({
     openType: {
       type: String,
       value: ''
+    },
+    disabled: {
+      type: Boolean,
+      value: false
     }
   },
   data : {
@@ -56,6 +60,9 @@ Component({
   },
   methods: {
     onTap () {
+      if (this.data.disabled) {
+        return
+      }
       this.triggerEvent('ftap')
     },
     bindGetUserInfo: function (event) {

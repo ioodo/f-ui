@@ -26,9 +26,12 @@
   </image>
   <view class="page-content" style="height: {{ contentHeight }}px;">
     <ptf-view class="page-content-ptf" nomore="{{nomore}}" refreshing="{{refreshing}}" bindpulldownrefresh="refreshData" bindloadmore="loadMore"
-    disablePullDown="{{ disablePullDownRefresh }}" disablePullUp="{{ disablePullUpRefresh }}">
+    disablePullDown="{{ disablePullDownRefresh }}" disablePullUp="{{ disablePullUpRefresh }}" wx:if="{{ scrollable }}">
       <slot name="pageContent"></slot>
     </ptf-view>
+    <block wx:else>
+      <slot name="pageContent"></slot>
+    </block>
   </view>
   <f-toolbar class="f-toolbar-comp" wx:if="{{ toolbar }}">
     <view slot="left">

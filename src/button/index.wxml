@@ -1,8 +1,8 @@
 <button
-  class="f-button {{ extClass }} type-{{type}} size-{{ size }} {{ fill ? 'f-button-fill' : ''}} {{ shape }} {{ block ? 'f-button-block' : ''}}"
+  class="f-button {{ extClass }} type-{{type}} size-{{ size }} {{ fill ? 'f-button-fill' : ''}} {{ shape }} {{ block ? 'f-button-block' : ''}} {{ disabled ? 'f-button-disabled' : ''}}"
   type="{{ type }}"
   size="{{ size }}"
-  bindtap="onTap"
+  catchtap="onTap"
   openType="{{ openType }}"
   bindgetuserinfo="bindGetUserInfo"
   bindcontact="bindContact"

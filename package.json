@@ -1,6 +1,6 @@
 {
   "name": "mp-fui",
-  "version": "1.0.31",
+  "version": "1.0.36",
   "description": "A mini program ui library",
   "miniprogram": "src",
   "main": "index.js",

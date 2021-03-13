@@ -54,3 +54,6 @@ button.f-button {
   display: flex;
   justify-content: center;
 }
+.f-button.f-button-disabled {
+  opacity: 0.5;
+}

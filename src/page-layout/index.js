@@ -27,6 +27,10 @@ Component({
     toolbar: {
       type: Boolean,
       value: false
+    },
+    scrollable: {
+      type: Boolean,
+      value: true
     }
   },
   data : {
