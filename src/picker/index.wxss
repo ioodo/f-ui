@@ -22,3 +22,17 @@
 .f-picker-view-row__content {
   text-align: center;
 }
+.f-picker .f-toolbar:after {
+  content: '';
+  position: absolute;
+  background-color: #F1F1F1;
+  display: block;
+  z-index: 15;
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  height: 2rpx;
+  width: 100%;
+  transform-origin: 50% 100%;
+}
