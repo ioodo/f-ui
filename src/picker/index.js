@@ -42,10 +42,11 @@ Component({
     }
   },
   data : {
-    contentClassName: ''
+    contentClassName: '',
+    isPickStart: false,
+    isOkTrigger: false
   },
   observers : {
-    
   },
   lifetimes: {
     ready: function () {
@@ -60,6 +61,11 @@ Component({
       this.handleAction('cancel')
     },
     onOk () {
+      const { isPickStart } = this.data
+      if (isPickStart) {
+        this.data.isOkTrigger = true
+        return
+      }
       this.handleAction('ok')
     },
     handleAction(action) {
@@ -70,15 +76,26 @@ Component({
         })
       })
     },
+    handlePickstart (e) {
+      this.data.isPickStart = true
+    },
+    handlePickend (e) {
+      this.data.isPickStart = false
+    },
     handleChange (e) {
+      const { value } = e.detail
       this.setData({
-        value: e.detail.value
-      })
-      wx.nextTick(() => {
+        value: value
+      }, () => {
         this.triggerEvent('change', {
-          position: e.detail.value,
+          position: value,
           value: this.getValue()
         })
+
+        if (this.data.isOkTrigger) {
+          this.handleAction('ok')
+          this.data.isOkTrigger = false
+        }
       })
     },
     getValue () {
@@ -89,6 +106,7 @@ Component({
         result.push(col[value[i] != null ? value[i] : 0 ])
         i++;        
       })
+      console.log(result)
       return result;
     }
   }

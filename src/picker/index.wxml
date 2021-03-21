@@ -11,7 +11,9 @@
   <picker-view
     class="f-picker-view"
     value="{{ value }}"
-    bindchange="handleChange">
+    bindchange="handleChange"
+    bindpickstart="handlePickstart"
+    bindpickend="handlePickend">
     <picker-view-column
       wx:for="{{ columns }}"
       wx:key="*this">

@@ -2,9 +2,9 @@
   class="f-popup {{ visible ? 'f-popup-show' : ''}}"
   bindtap="onPopupTap"
 >
-  <view
-    class="f-popup-content {{ contentClass }} {{ contentClassName }}"
-  >
-    <slot></slot>
-  </view>
+</view>
+<view
+  class="f-popup-content {{ contentClass }} {{ contentClassName }}"
+>
+  <slot></slot>
 </view>
