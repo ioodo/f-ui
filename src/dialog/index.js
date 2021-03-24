@@ -41,6 +41,10 @@
     },
     content: {
       type: String
+    },
+    dismissOnAction: {
+      type: Boolean,
+      value: true
     }
   },
   data : {
@@ -85,11 +89,13 @@
       this.triggerEvent('getphonenumber', event.detail)
     },
     handleAction (action) {
-      this.setData({
-        show: false
-      })
+      if (this.data.dismissOnAction) {
+        this.setData({
+          show: false
+        })
+      }
       wx.nextTick(() => {
-        this.triggerEvent(action)
+        this.triggerEvent(action, this)
         const { callback } = this.data
         if (callback) {
           callback(action, this)
