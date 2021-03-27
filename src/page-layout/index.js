@@ -58,8 +58,10 @@ Component({
       this.resize()
     },
     resize () {
-      // const gd = getApp().globalData[strings.globalDataName]
-      const sysInfo = wx.getSystemInfoSync()
+      const sysInfo = getApp().globalData[strings.globalDataName]
+      // console.log(gd)
+      // const sysInfo = wx.getSystemInfoSync()
+      // console.log('-----sysInfo.windowHeight:' + sysInfo.windowHeight)
 
       var query = this.createSelectorQuery();
       query.select('.page-layout-navbar').boundingClientRect()

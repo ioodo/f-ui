@@ -32,7 +32,7 @@ Component({
   data : {
     // 状态栏
     statusBar: {
-      height: 0
+      height: 20
     },
     // 导航栏
     navbar: {
@@ -49,8 +49,8 @@ Component({
     /**
      * 观察文字内容变更
      */
-    'subTitle' : function() {
-      this.resizeNavbar()
+    'title,subTitle' : function() {
+      this.render()
     }
   },
   lifetimes: {
@@ -67,6 +67,7 @@ Component({
   },
   created () {
     this.systemInfo();
+    this.render()
   },
   attached () {
     this.render()
